@@ -1,0 +1,245 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;1,500&family=Open+Sans:ital,wght@0,400;0,800;1,700;1,800&family=Poppins:wght@200;300;400;500;600&family=Staatliches&display=swap');
+
+
+:root {
+    --corBg: #4F436B;
+    --corNav: #795EE9;
+    --corDestaque: #565656;
+    --CorBtn: #795EE9;
+    --CorLink: white;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+a {
+    color: var(--corLink);
+}
+
+a:hover {
+    color: var(--corHover);
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+#header {
+    display: flex;
+    height: 70px;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--CorBtn);
+
+}
+
+#logo {
+    font-family: 'Fredoka One', cursive;
+}
+
+#menu {
+    display: flex;
+    gap: .5rem;
+}
+
+#menu a {
+    color: var(--CorLink);
+    display: block;
+    padding: .5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+.imjh-welcome{
+    width: 4rem;
+}
+
+.content-welcome {
+    background-attachment: fixed;
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10rem;
+
+}
+
+.btn-wc {
+    width: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: #795EE9;
+    margin-top: 30px;
+    color: white;
+    cursor: grab;
+}
+
+.h1-skills {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.container-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 30px;
+    background: #ccc;
+    height: 400px;
+    width: 270px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.card-img {
+    background-color: #795EE9;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.html-img {
+    background-image: url('../images/html5.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.css-img {
+    background-image: url('../images/css3.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.img-bootstrap {
+    background-image: url('../images/bootstrap.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.img-mysql {
+    background-image: url('../images/mysql.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about-text{
+    text-align: justify;
+}
+
+@media (max-width: 600px) {
+    #btn-mobile {
+        display: block;
+    }
+
+
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: var(--corNav);
+        height: 0px;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow: hidden;
+    }
+
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu a {
+        padding: 1rem 0px;
+        margin: 0 1rem;
+        text-align: center;
+        padding-top: 80px;
+
+    }
+
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+    }
+
+    #hamburguer {
+        display: block;
+        width: 20px;
+        border-top: 2px solid;
+    }
+
+    #hamburguer::after,
+    #hamburguer::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburguer {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    .content-welcome {
+        margin: 0;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-welcome {
+        width: 400px;
+    }
+
+}
